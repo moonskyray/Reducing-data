@@ -1,0 +1,76 @@
+#import data
+consumer <- read.csv(url('https://raw.githubusercontent.com/FahroziFahrozi/Google-Code-In-Task/master/Consumer%20dataset.csv'))
+
+#Show the first few lines of data
+head(consumer)
+
+#Show the last few lines of data
+tail(consumer)
+
+#View the number of rows of data
+dim(consumer)
+
+#Delete the extra columns in the data, leaving only "value" and "brand"
+consumer <- consumer[,-1:-6]
+consumer <- consumer[,-2:-3]
+
+#Check that the data is correct
+head(consumer)
+
+#Find the average value of the brand as "a"
+branda <- subset(consumer,brand == "a")
+dim(branda)
+head(branda)
+tail(branda)
+a<-mean(branda$value)
+a
+
+#Find the average value of the brand as "b"
+brandb <- subset(consumer,brand == "b")
+b<-mean(brandb$value)
+b
+
+#Find the average value of the brand as "c"
+brandc <- subset(consumer,brand == "c")
+c<-mean(brandc$value)
+c
+
+#Find the average value of the brand as "d"
+brandd <- subset(consumer,brand == "d")
+d<-mean(brandd$value)
+d
+
+#Find the average value of the brand as "e"
+brande <- subset(consumer,brand == "e")
+e<-mean(brande$value)
+e
+
+#Find the average value of the brand as "f"
+brandf <- subset(consumer,brand == "f")
+f<-mean(brandf$value)
+f
+
+#Find the average value of the brand as "g"
+brandg <- subset(consumer,brand == "g")
+g<-mean(brandg$value)
+g
+
+#Find the average value of the brand as "h"
+brandh <- subset(consumer,brand == "h")
+h<-mean(brandh$value)
+h
+
+#Find the average value of the brand as "i"
+brandi <- subset(consumer,brand == "i")
+i<-mean(brandi$value)
+i
+
+#Find the average value of the brand as "j"
+brandj <- subset(consumer,brand == "j")
+j<-mean(brandj$value)
+j
+
+#Draw a bar chart of each brand value
+value <- c(a,b,c,d,e,f,g,h,i,j)
+name <- c("a","b","c","d","e","f","g","h","i","j")
+barplot(value,names.arg=name,xlab="brand",ylab="value",col="red",main="Value comparison of each brand")
